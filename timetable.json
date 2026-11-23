@@ -1,40 +1,7 @@
 {
- "updated": "Sun 22 Nov, 3:22pm",
+ "updated": "Mon 23 Nov, 11:33am",
  "timezone": "Australia/Melbourne",
  "classes": [
-  {
-   "date": "2026-11-23",
-   "start": "06:45",
-   "end": "07:30",
-   "class": "Muay Thai All Levels",
-   "program": "Adults MMA",
-   "coach": "Andrei",
-   "booked": 0,
-   "capacity": 30,
-   "spots_left": 30
-  },
-  {
-   "date": "2026-11-23",
-   "start": "12:00",
-   "end": "13:00",
-   "class": "Muay Thai All Levels",
-   "program": "Adults MMA",
-   "coach": "Kru",
-   "booked": 0,
-   "capacity": 50,
-   "spots_left": 50
-  },
-  {
-   "date": "2026-11-23",
-   "start": "12:00",
-   "end": "13:00",
-   "class": "BJJ No-Gi All Levels",
-   "program": "Adults BJJ",
-   "coach": "Julian",
-   "booked": 0,
-   "capacity": 50,
-   "spots_left": 50
-  },
   {
    "date": "2026-11-23",
    "start": "16:30",
@@ -785,17 +752,6 @@
   },
   {
    "date": "2026-11-27",
-   "start": "16:30",
-   "end": "17:15",
-   "class": "Kids Wrestling - BEGINNER",
-   "program": "Kids Wrestling",
-   "coach": "Amir",
-   "booked": 0,
-   "capacity": 40,
-   "spots_left": 40
-  },
-  {
-   "date": "2026-11-27",
    "start": "17:15",
    "end": "18:00",
    "class": "Strength",
@@ -820,7 +776,7 @@
    "date": "2026-11-27",
    "start": "17:15",
    "end": "18:00",
-   "class": "Kids Wrestling - ADVANCED",
+   "class": "Kids Wrestling",
    "program": "Kids Wrestling",
    "coach": "Amir",
    "booked": 0,
@@ -1211,6 +1167,17 @@
    "booked": 0,
    "capacity": 40,
    "spots_left": 40
+  },
+  {
+   "date": "2026-12-01",
+   "start": "16:30",
+   "end": "17:15",
+   "class": "Kids Wrestling - BEGINNER",
+   "program": "Kids Wrestling",
+   "coach": "Amir",
+   "booked": 0,
+   "capacity": 10,
+   "spots_left": 10
   },
   {
    "date": "2026-12-01",
@@ -1748,8 +1715,8 @@
    "program": "Kids Wrestling",
    "coach": "Amir",
    "booked": 0,
-   "capacity": 40,
-   "spots_left": 40
+   "capacity": 10,
+   "spots_left": 10
   },
   {
    "date": "2026-12-04",
@@ -1871,6 +1838,28 @@
    "booked": 0,
    "capacity": 50,
    "spots_left": 50
+  },
+  {
+   "date": "2026-12-06",
+   "start": "09:00",
+   "end": "10:00",
+   "class": "Sunday Open Mat",
+   "program": "Open Mat",
+   "coach": "Oliver",
+   "booked": 0,
+   "capacity": 70,
+   "spots_left": 70
+  },
+  {
+   "date": "2026-12-06",
+   "start": "10:00",
+   "end": "11:00",
+   "class": "Sunday Open Mat",
+   "program": "Open Mat",
+   "coach": "Oliver",
+   "booked": 0,
+   "capacity": 70,
+   "spots_left": 70
   }
  ],
  "events": [
