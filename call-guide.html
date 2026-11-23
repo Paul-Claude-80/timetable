@@ -1,0 +1,630 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Extreme MMA Call Guide</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+/* Layout: a front-desk console. Step rail left, one big "say this" card in the middle with capture fields, the caller's profile building up on the right. */
+:root{
+  --bg:#f3f4f2; --panel:#ffffff; --ink:#16191c; --muted:#5c646b; --line:#d9ddd9;
+  --accent:#c8102e; --accent-ink:#ffffff; --soft:#fbe9ec; --ok:#1f7a4d; --okbg:#e5f3ec; --warn:#8a5a00; --warnbg:#fdf1d8; --field:#f7f8f6;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Barlow","Segoe UI",Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121416; --panel:#1b1e21; --ink:#eef0f1; --muted:#a1a9b0; --line:#30353a;
+  --accent:#ff4d63; --accent-ink:#16191c; --soft:#3a1d23; --ok:#5fd39a; --okbg:#173328; --warn:#f3c066; --warnbg:#3a2e14; --field:#15181a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121416; --panel:#1b1e21; --ink:#eef0f1; --muted:#a1a9b0; --line:#30353a;
+  --accent:#ff4d63; --accent-ink:#16191c; --soft:#3a1d23; --ok:#5fd39a; --okbg:#173328; --warn:#f3c066; --warnbg:#3a2e14; --field:#15181a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:16px 40px}
+.wrap{max-width:1320px;margin:0 auto;display:grid;gap:14px}
+header{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;justify-content:space-between}
+h1{font-family:var(--display);font-size:2rem;line-height:1;margin:0;letter-spacing:.01em}
+h1 span{color:var(--accent)}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.rule{font-family:var(--display);font-size:1.15rem;letter-spacing:.03em;text-transform:uppercase;background:var(--ink);color:var(--bg);padding:6px 12px;border-radius:6px}
+.draft{font-size:.8rem;color:var(--warn);background:var(--warnbg);padding:4px 10px;border-radius:99px;font-weight:600}
+.times{font-size:.85rem;color:var(--muted);margin:0}
+.times b{color:var(--ink);font-weight:600}
+.grid{display:grid;grid-template-columns:220px minmax(0,1fr) 290px;gap:14px;align-items:start}
+@media (max-width:1100px){.grid{grid-template-columns:200px minmax(0,1fr)}.profile{grid-column:1 / -1}}
+@media (max-width:760px){.grid{grid-template-columns:minmax(0,1fr)}.rail{order:3}.profile{order:2}}
+.rail,.profile{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px}
+.rail h2,.profile h2{font-family:var(--display);font-size:.95rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:12px 6px 4px}
+.rail h2:first-child,.profile h2:first-child{margin-top:2px}
+.rail button{all:unset;display:flex;gap:10px;align-items:baseline;width:100%;padding:5px 8px;border-radius:6px;cursor:pointer;font-size:.9rem}
+.rail button .n{font-variant-numeric:tabular-nums;color:var(--muted);width:1.6em;text-align:right;font-size:.8rem}
+.rail button:hover{background:var(--bg)}
+.rail button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.rail button.on{background:var(--soft);font-weight:600}
+.rail button.on .n{color:var(--accent)}
+.rail button.done .n::after{content:" ✓";color:var(--ok)}
+.main{display:grid;gap:14px;min-width:0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;display:grid;gap:14px}
+.eyebrow{font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;color:var(--accent);font-size:.95rem}
+.card h3{font-family:var(--display);font-size:2rem;line-height:1.05;margin:0}
+.say{font-size:1.3rem;line-height:1.45;border-left:4px solid var(--accent);padding:2px 0 2px 16px;margin:0;max-width:62ch}
+.nm{color:var(--accent);font-weight:600}
+.note{color:var(--muted);font-size:.95rem;max-width:66ch;margin:0}
+.note ul{margin:6px 0 0;padding-left:20px}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+label.f{display:grid;gap:4px;font-size:.8rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+label.f input{font:inherit;font-size:1.05rem;text-transform:none;letter-spacing:0;font-weight:500;color:var(--ink);background:var(--field);border:1px solid var(--line);border-radius:8px;padding:9px 11px;width:100%}
+label.f select{font:inherit;font-size:1rem;text-transform:none;letter-spacing:0;font-weight:600;color:var(--ink);background:var(--field);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
+label.staff{grid-auto-flow:column;align-items:center;gap:8px}
+label.f select.unset{border-color:var(--accent)}
+.chk{font-size:.9rem;font-weight:600;margin:0;min-height:1.4em}
+.chk.bad{color:var(--accent)}
+.chk.good{color:var(--ok)}
+label.f input:focus,label.f select:focus{outline:2px solid var(--accent);outline-offset:0;border-color:transparent}
+.group{display:grid;gap:6px}
+.group > span{font-size:.8rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.ticks{display:flex;flex-wrap:wrap;gap:8px}
+.ticks label{display:inline-flex;gap:7px;align-items:center;border:1px solid var(--line);background:var(--bg);padding:7px 12px;border-radius:99px;cursor:pointer;font-weight:500;font-size:.95rem}
+.ticks input{accent-color:var(--accent);margin:0}
+.ticks label:has(input:checked){background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.ticks label:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+.box{border-radius:8px;padding:12px 14px;font-size:.95rem}
+.box.ok{background:var(--okbg)}
+.box.warn{background:var(--warnbg)}
+.box b{display:block;margin-bottom:2px}
+.slots{display:grid;gap:8px}
+.week{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.week button{font:inherit;font-weight:600;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:6px 12px;border-radius:8px;cursor:pointer}
+.week button.pick{background:var(--ink);color:var(--bg)}
+.slotgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.slot{font:inherit;text-align:left;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:8px 10px;border-radius:8px;cursor:pointer;display:grid;gap:1px}
+.slot small{color:var(--muted);font-size:.8rem}
+.slot.full{opacity:.55;text-decoration:line-through;cursor:not-allowed}
+.slot.pick{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.slot.pick small{color:var(--accent-ink)}
+.slot small.live{display:block;margin-top:2px;font-weight:600;color:var(--accent)}.slot small.live.off{color:var(--muted,#888);font-weight:400}
+.slot:focus-visible,.week button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.nav{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.nav button,.copy{font:inherit;font-weight:600;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:9px 16px;border-radius:8px;cursor:pointer}
+.nav .next{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.nav button:focus-visible,.copy:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.profile dl{margin:0 6px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 10px;font-size:.92rem}
+.profile dt{color:var(--muted)}
+.profile dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+.profile dd.empty{font-weight:400;color:var(--line)}
+.copy{width:100%;margin-top:12px}
+.linkbtn{font:inherit;font-size:.8rem;background:none;border:0;color:var(--accent);cursor:pointer;text-transform:none;letter-spacing:0;padding:0 0 0 8px;text-decoration:underline}
+.copied{font-size:.85rem;color:var(--ok);margin:6px 6px 0;min-height:1.2em}
+.help{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 18px}
+.help summary{cursor:pointer;font-family:var(--display);font-size:1.15rem;letter-spacing:.02em}
+.help table{width:100%;border-collapse:collapse;font-size:.93rem;margin-top:10px}
+.help td{border-top:1px solid var(--line);padding:8px 6px;vertical-align:top}
+.help td:first-child{width:34%;color:var(--muted)}
+.tw{overflow-x:auto}
+.never{color:var(--accent);font-weight:600}
+.incoming{margin:0;background:var(--okbg);color:var(--ink);border-left:4px solid var(--ok);padding:10px 14px;border-radius:8px;font-size:1.05rem}
+.incoming b{font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:no-preference){.card{animation:in .18s ease-out}@keyframes in{from{transform:translateY(4px);opacity:.6}to{transform:none;opacity:1}}}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Enquiry <span>Call Flow</span></h1>
+    <div class="bar">
+      <label class="f staff">Team member
+        <select id="f-staff" data-f="staff">
+          <option value="">Choose your name</option>
+          <option>Cecilia</option><option>Lisa</option><option>Zoe</option><option>Paul</option><option>Amanda</option><option>Other</option>
+        </select>
+      </label>
+      <span class="rule">Always end with a question</span>
+      <span class="draft">Test: real class times, Mindbody spots not live yet</span>
+    </div>
+  </header>
+  <p class="incoming" id="incoming" hidden></p>
+  <p class="times">Intro lessons (may change): <b>Muay Thai</b> Mon, Wed, Fri 6pm · Tue, Thu 7:30pm &nbsp;·&nbsp; <b>BJJ</b> Mon to Thu 7pm, Fri 6pm, Sat 11am (all 1 hour) &nbsp;·&nbsp; <b>Saturday</b> adult Muay Thai intros (confirm time) &nbsp;·&nbsp; <b>Mornings</b> Wed, Fri 6:45am &nbsp;·&nbsp; <b>Kids</b> Tue, Thu 4:30pm</p>
+
+  <div class="grid">
+    <nav class="rail" id="rail" aria-label="Call steps"></nav>
+    <div class="main">
+      <section class="card" id="card" aria-live="polite"></section>
+      <details class="help">
+        <summary>Price question? Tap here</summary>
+        <div class="tw"><table>
+          <tr><td>At the start (most calls)</td><td>"I can definitely help you with that. Just a few quick questions." Then carry on with the next step.</td></tr>
+          <tr><td>Won't give their last name</td><td>Don't get stuck. Roll on: "Okay, is this for yourself or a child?" Get the last name later, at the booking.</td></tr>
+          <tr><td>Pushy, halfway through</td><td>Don't stop or argue. Roll to the next question: "Okay, so is this for yourself or a child?"</td></tr>
+          <tr><td>"I want the prices first"</td><td>"I completely understand. We get enquiries all day and we do book out fast, and it is hard to explain over the phone. The best way is to get you booked in, so you can come down, try it and see the place. It's easier to explain here at reception, where we've got the price sheet. I've got a spot on ___ at ___. Did you want me to pencil you in?"</td></tr>
+          <tr><td>Still not booking</td><td>"Look, we do book out fast, so why don't we just pencil you in? At least that secures the spot. If you want to change it, we can change it later. How does that sound?"</td></tr>
+          <tr><td>PT or one-on-one</td><td>"It depends on the style and the coach. PTs start from $99 an hour. But you might not need one, because the introduction lesson is semi-private, and it's free."</td></tr>
+          <tr><td class="never">Never say</td><td>Any other dollar figure, contract or term length, joining fees, "it's our policy", "we don't give prices over the phone", "I'm not allowed to tell you".</td></tr>
+        </table></div>
+      </details>
+      <details class="help">
+        <summary>Tricky moment? Tap here</summary>
+        <div class="tw"><table>
+          <tr><td>"Can I come in today?" (it's full)</td><td>"Today's full. We only take a few new people a class so the coach can look after you. I've got ___ or ___. Which is better for you?"</td></tr>
+          <tr><td>Not ready to book</td><td>Get their name and mobile, then agree a callback: "How about I give you a call in a couple of weeks, when things are less busy for you?" After the call, add a "New Prospect" contact log in Mindbody with "Follow up by this date" set to that day.</td></tr>
+          <tr><td>"I'll have to check with my partner"</td><td>"No problem. Let's pencil in a spot so you don't miss out. If it doesn't suit, just let us know."</td></tr>
+          <tr><td>Boxing, kickboxing, karate, Taekwondo, judo</td><td>Boxing or kickboxing: "Muay Thai is perfect. It's boxing with the kicks, knees and elbows. Have you trained in martial arts before?" Boxed for years? "Sounds like your hands are pretty good. Now it's time to work on your kicks. Let's go ahead and get you booked in. I've got two spots available, ___ or ___. Which one is better for you?" Karate or Taekwondo: Muay Thai. Judo: jiu-jitsu. Anything else: ask their goals and suggest the best fit. Never start with "no".</td></tr>
+          <tr><td>"Do you do casual sessions?"</td><td>First: "Do you live in Melbourne?" Visiting (here less than 3 months): "For people visiting Melbourne, we've got a casual pass." Then carry on with the script. Local: "Then let's get you booked in for an introduction lesson. It's like a free trial anyway." Never a flat no.</td></tr>
+          <tr><td>Rude caller</td><td>Stay calm: "I'm sorry it's been frustrating. Let me see what I can do." Never argue or mention the recording.</td></tr>
+        </table></div>
+      </details>
+    </div>
+    <aside class="profile" aria-label="Caller profile">
+      <h2>Caller profile</h2>
+      <dl id="prof"></dl>
+      <button class="copy" id="copy">Copy for Mindbody</button>
+      <p class="copied" id="copied" role="status"></p>
+    </aside>
+  </div>
+</div>
+
+<script>
+const D={friends:[],after:[],parentComing:'',kids:[{name:'',age:'',yrs:''}],slot2:null,staff:'',email2:'',first:'',last:'',mobile:'',mobileOk:false,source:[],referrer:'',who:'',over18:'',childName:'',childAge:'',styles:[],goals:[],trained:'',expStyles:[],expLong:'',expAgo:'',expNow:'',expComp:'',expWhere:'',slot:null,email:'',refName:'',refMobile:'',bring:[]};
+let week=0,cur=0;const seen=new Set();
+const STY=['Muay Thai','BJJ (gi)','BJJ (no-gi)','Wrestling','Strength & Fitness','Other (boxing, karate, judo, MMA...)','Not sure'];
+const GOALS=['Fitness','Weight loss / toning','Self-defence','Confidence','Compete','Hobby / fun','Focus & discipline (kids)'];
+const SRC=['Google','Instagram / Facebook','Website','Walked past','Member referral','Other'];
+const EXPS=['Boxing','Karate','BJJ','Wrestling','Muay Thai','Kickboxing','MMA','Judo','Other'];
+const nm=()=>D.first?`<span class="nm">${esc(D.first)}</span>`:'[name]';
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const kid=()=>D.who==='child';
+const u18=()=>D.who==='self'&&D.over18==='no';
+const KIDAGES=['3 to 6','7 to 12'];
+const youngKids=()=>kid()&&D.kids.some(k=>KIDAGES.includes(k.age));
+const teenKids=()=>kid()&&D.kids.some(k=>k.age==='13+');
+const kidNames=f=>D.kids.filter(f).map((k,i)=>k.name||('child '+(D.kids.indexOf(k)+1))).join(' and ');
+function field(k,label,ph,type){return `<label class="f">${label}<input id="f-${k}" data-f="${k}" type="${type||'text'}" value="${esc(D[k])}" placeholder="${ph||''}" autocomplete="off"></label>`}
+function ticks(k,opts,multi,label){return `<div class="group">${label?`<span>${label}</span>`:''}<div class="ticks">${opts.map(([v,l])=>{const on=multi?D[k].includes(v):D[k]===v;return `<label><input type="${multi?'checkbox':'radio'}" name="${k}" data-t="${k}" data-v="${esc(v)}" ${on?'checked':''}>${l}</label>`}).join('')}</div></div>`}
+const ov=a=>a.map(x=>[x,x]);
+// MASTER TIMETABLE: copied from extrememma.com.au/timetables on 16 Nov 2026.
+// Later this list comes straight from Mindbody (with live spots left). dow: 0 Sun ... 6 Sat.
+const MASTER=(()=>{const rows=`
+1|06:45|07:30|Muay Thai|All Levels|adult
+1|12:00|13:00|BJJ No-Gi|All Levels|adult
+1|12:00|13:00|Muay Thai|All Levels|adult
+1|16:30|17:00|Kids BJJ|All Levels|3-6
+1|16:30|17:15|Kids BJJ|Beginner|7-12
+1|16:30|18:00|Kids BJJ|Comp (invite only)|7-12
+1|16:30|17:15|Kids Muay Thai|Advanced|7-12
+1|16:30|17:15|Strength|All Levels|adult
+1|17:15|18:00|Kids Muay Thai|Beginner|7-12
+1|17:15|18:00|Strength|All Levels|adult
+1|18:00|19:00|BJJ No-Gi|Advanced|adult
+1|18:00|19:00|Muay Thai|Intro|adult
+1|18:00|18:45|Strength|All Levels|adult
+1|18:45|19:30|Strength|All Levels|adult
+1|19:00|20:00|BJJ No-Gi|Beginner|adult
+1|19:00|20:30|Muay Thai|Advanced|adult
+2|06:45|07:30|Muay Thai|All Levels|adult
+2|12:00|13:00|BJJ No-Gi|All Levels|adult
+2|12:00|13:00|Muay Thai|All Levels|adult
+2|16:30|17:15|Kids BJJ|Advanced|7-12
+2|16:30|17:00|Kids Muay Thai|All Levels|3-6
+2|16:30|17:15|Kids Muay Thai|Beginner|7-12
+2|17:15|18:00|Kids BJJ|Beginner|7-12
+2|17:15|18:00|Kids Muay Thai|Advanced|7-12
+2|16:30|17:15|Kids Wrestling|Beginner|7-12
+2|17:15|18:00|Kids Wrestling|Advanced|7-12
+2|18:00|19:00|BJJ Gi|Advanced|adult
+2|18:00|19:30|Muay Thai|Advanced|adult
+2|18:00|19:30|Wrestling|All Levels|adult
+2|19:00|20:30|BJJ No-Gi|All Levels|adult
+2|19:30|20:30|Muay Thai|Intro|adult
+3|06:45|07:30|Muay Thai|All Levels|adult
+3|12:00|13:00|BJJ No-Gi|All Levels|adult
+3|12:00|13:00|Muay Thai|All Levels|adult
+3|16:30|17:00|Kids BJJ|All Levels|3-6
+3|16:30|17:15|Kids BJJ|Comp (invite only)|7-12
+3|16:30|17:15|Kids Muay Thai|Beginner|7-12
+3|16:30|17:15|Strength|All Levels|adult
+3|17:15|18:00|Kids BJJ|Beginner|7-12
+3|17:15|18:00|Kids Muay Thai|Advanced|7-12
+3|17:15|18:00|Kids Wrestling|All Levels|7-12
+3|17:15|18:00|Strength|All Levels|adult
+3|18:00|19:00|BJJ No-Gi|Advanced|adult
+3|18:00|19:00|Muay Thai|Intro|adult
+3|18:00|18:45|Strength|All Levels|adult
+3|18:00|19:30|Wrestling|All Levels|adult
+3|18:45|19:30|Strength|All Levels|adult
+3|19:00|20:00|BJJ No-Gi|Beginner|adult
+3|19:00|20:30|Muay Thai|Advanced|adult
+4|06:45|07:30|Muay Thai|All Levels|adult
+4|12:00|13:00|BJJ No-Gi|All Levels|adult
+4|12:00|13:00|Muay Thai|All Levels|adult
+4|16:30|17:15|Kids BJJ|Advanced|7-12
+4|16:30|17:00|Kids Muay Thai|All Levels|3-6
+4|16:30|17:15|Kids Muay Thai|Beginner|7-12
+4|17:15|18:00|Kids BJJ|Comp (invite only)|7-12
+4|17:15|18:00|Kids BJJ|Beginner|7-12
+4|17:15|18:00|Kids Muay Thai|Advanced|7-12
+4|18:00|19:00|BJJ Gi|Advanced|adult
+4|18:00|19:30|Muay Thai|Advanced|adult
+4|18:00|19:30|Wrestling|All Levels|adult
+4|19:00|20:30|BJJ No-Gi|All Levels|adult
+4|19:30|20:30|Muay Thai|Intro|adult
+5|06:45|07:30|Muay Thai|All Levels|adult
+5|12:00|13:00|BJJ No-Gi|All Levels|adult
+5|16:30|17:00|Kids BJJ No-Gi|All Levels|3-6
+5|16:30|17:15|Kids BJJ No-Gi|Comp (invite only)|7-12
+5|16:30|17:15|Strength|All Levels|adult
+5|17:15|18:00|Kids BJJ No-Gi|Beginner|7-12
+5|16:30|17:15|Kids Wrestling|Beginner|7-12
+5|17:15|18:00|Kids Wrestling|All Levels|7-12
+5|17:15|18:00|Kids Wrestling|Advanced|7-12
+5|17:15|18:00|Strength|All Levels|adult
+5|18:00|19:30|BJJ No-Gi|All Levels|adult
+5|18:00|19:00|BJJ|Intro|adult
+5|18:00|19:30|Muay Thai|Intro|adult
+5|18:00|18:45|Strength|All Levels|adult
+5|18:00|19:30|Wrestling|All Levels|adult
+5|18:45|19:30|Strength|All Levels|adult
+6|09:00|10:00|Kids Muay Thai|All Levels|7-12
+6|10:00|11:00|Kids BJJ No-Gi|All Levels|7-12
+6|10:00|11:00|Muay Thai|All Levels|adult
+6|11:00|12:00|BJJ|Intro|adult
+6|11:00|12:30|BJJ No-Gi|All Levels|adult
+0|09:00|11:00|BJJ Open Mat|Casuals|adult`;
+ return rows.trim().split('\n').map(r=>{const [dow,start,end,prog,level,ages]=r.split('|');return {dow:+dow,start,end,prog,level,ages}})})();
+const fam=p=>/Muay/.test(p)?'MT':/Wrestling/.test(p)?'WR':/BJJ/.test(p)?'BJJ':/Strength/.test(p)?'SF':'';
+// LIVE FROM MINDBODY (read-only pull, Claude API staff login). Cancelled classes and Open Gym left out.
+// Columns: date|start|class|coach|booked|capacity. Refreshed from Paul's Mac.
+let LIVE_AT='Sat 21 Nov, 11:15pm';
+const parseLive=a=>a.map(r=>{const [date,start,name,coach,booked,cap]=String(r).split('|');return {date,start,name,coach:coach||'',booked:+booked||0,cap:+cap||0,left:Math.max(0,(+cap||0)-(+booked||0))}}).filter(l=>/^\d{4}-\d\d-\d\d$/.test(l.date)&&/^\d\d:\d\d$/.test(l.start));
+let LIVE=(()=>{const rows=`
+2026-11-22|09:00|Sunday Open Mat|Oliver|0|70
+2026-11-22|10:00|Sunday Open Mat|Oliver|0|70
+2026-11-23|06:45|Muay Thai All Levels|Andrei|0|30
+2026-11-23|12:00|Muay Thai All Levels|Kru|0|50
+2026-11-23|12:00|BJJ No-Gi All Levels|Julian|0|50
+2026-11-23|16:30|(7-12) Kids Muay Thai - ADVANCED|Kru|0|50
+2026-11-23|16:30|Strength|Jack|0|20
+2026-11-23|16:30|(3-6) Kids BJJ|Julian|1|20
+2026-11-23|16:30|(7-12) Kids BJJ - BEGINNER|Jeshua|0|50
+2026-11-23|16:30|Kids BJJ - COMP (invite only)|Belal|0|50
+2026-11-23|17:15|(7-12) Kids Muay Thai - BEGINNER|Kru|0|50
+2026-11-23|17:15|Strength|Jack|0|20
+2026-11-23|18:00|Muay Thai Beginner|Kru|0|50
+2026-11-23|18:00|Strength|Jack|0|20
+2026-11-23|18:00|BJJ No-Gi Advanced|Belal|0|50
+2026-11-23|18:45|Strength|Jack|0|20
+2026-11-23|19:00|Muay Thai Advanced|Kru|0|40
+2026-11-23|19:00|BJJ No-Gi Beginner|Belal|0|70
+2026-11-24|06:45|Muay Thai All Levels|Andrei|0|30
+2026-11-24|12:00|BJJ No-Gi All Levels|Jeshua|0|50
+2026-11-24|12:00|Muay Thai All Levels|Kru|0|50
+2026-11-24|16:30|Fight Fit|Jack|0|20
+2026-11-24|16:30|(7-12) Kids Muay Thai - BEGINNER|Kru|0|50
+2026-11-24|16:30|(3-6) Kids Muay Thai|Andrei|0|20
+2026-11-24|16:30|(7-12) Kids BJJ - ADVANCED|Belal|0|40
+2026-11-24|17:15|Fight Fit|Jack|0|20
+2026-11-24|17:15|(7-12) Kids Muay Thai - ADVANCED|Kru|0|40
+2026-11-24|17:15|Kids Wrestling - ADVANCED|Amir|0|50
+2026-11-24|17:15|(7-12) Kids BJJ - BEGINNER|Belal|0|50
+2026-11-24|18:00|Fight Fit|Jack|0|20
+2026-11-24|18:00|Muay Thai Advanced|Kru|0|40
+2026-11-24|18:00|Wrestling|Kostya|0|40
+2026-11-24|18:00|BJJ Advanced|Belal|0|50
+2026-11-24|18:45|Fight Fit|Jack|0|20
+2026-11-24|19:00|BJJ No-Gi All Levels|Belal|0|70
+2026-11-24|19:30|Muay Thai Beginner|Kru|1|50
+2026-11-25|06:45|Muay Thai All Levels|Andrei|0|30
+2026-11-25|12:00|Muay Thai All Levels|Kru|0|50
+2026-11-25|12:00|BJJ No-Gi All Levels|Julian|0|50
+2026-11-25|16:30|Strength|Jack|0|30
+2026-11-25|16:30|(3-6) Kids BJJ|Julian|0|20
+2026-11-25|16:30|(7-12) Kids Muay Thai - BEGINNER|Kru|0|50
+2026-11-25|16:30|Kids BJJ - COMP (invite only)|Belal|0|50
+2026-11-25|17:15|(7-12) Kids Muay Thai - ADVANCED|Kru|0|50
+2026-11-25|17:15|Strength|Jack|0|30
+2026-11-25|17:15|(7-12) Kids BJJ - BEGINNER|Belal|0|50
+2026-11-25|17:15|Kids Wrestling|Amir|0|40
+2026-11-25|18:00|Muay Thai Beginner|Kru|0|50
+2026-11-25|18:00|Wrestling|Kostya|0|40
+2026-11-25|18:00|Strength|Jack|0|30
+2026-11-25|18:00|BJJ No-Gi Advanced|Belal|0|50
+2026-11-25|18:45|Strength|Jack|0|30
+2026-11-25|19:00|Muay Thai Advanced|Kru|0|40
+2026-11-25|19:00|BJJ No-Gi Beginner|Belal|0|70
+2026-11-26|06:45|Muay Thai All Levels|Andrei|0|30
+2026-11-26|12:00|BJJ No-Gi All Levels|Jeshua|0|50
+2026-11-26|12:00|Muay Thai All Levels|Kru|0|50
+2026-11-26|16:30|(7-12) Kids Muay Thai - BEGINNER|Kru|0|50
+2026-11-26|16:30|(3-6) Kids Muay Thai|Andrei|0|20
+2026-11-26|16:30|(7-12) Kids BJJ - ADVANCED|Belal|0|40
+2026-11-26|17:15|(7-12) Kids Muay Thai - ADVANCED|Kru|0|40
+2026-11-26|17:15|(7-12) Kids BJJ - BEGINNER|Jeshua|0|50
+2026-11-26|17:15|Kids BJJ - COMP (invite only)|Belal|0|50
+2026-11-26|18:00|Wrestling|Kostya|0|40
+2026-11-26|18:00|Muay Thai Advanced|Kru|0|40
+2026-11-26|18:00|BJJ Advanced|Belal|0|50
+2026-11-26|19:00|BJJ No-Gi All Levels|Belal|1|70
+2026-11-26|19:30|Muay Thai Beginner|Kru|0|50
+2026-11-27|06:45|Muay Thai All Levels|Andrei|0|30
+2026-11-27|12:00|BJJ No-Gi All Levels|Julian|0|50
+2026-11-27|16:30|Strength|Jack|0|20
+2026-11-27|16:30|(3-6) Kids BJJ No-Gi|Julian|0|20
+2026-11-27|16:30|Kids BJJ No-Gi - COMP (invite only)|Belal|0|50
+2026-11-27|16:30|Kids Wrestling - BEGINNER|Amir|0|40
+2026-11-27|17:15|Strength|Jack|0|20
+2026-11-27|17:15|(7-12) Kids BJJ No-Gi|Belal|0|50
+2026-11-27|17:15|Kids Wrestling - ADVANCED|Amir|0|40
+2026-11-27|18:00|Muay Thai All Levels|Kru|0|50
+2026-11-27|18:00|Strength|Jack|0|40
+2026-11-27|18:00|BJJ No-Gi All Levels|Belal|0|50
+2026-11-27|18:00|BJJ Intro Class||0|8
+2026-11-27|18:00|Wrestling|Kostya|0|30
+2026-11-27|18:45|Strength|Jack|0|40
+2026-11-28|09:00|(7-12) Kids Muay Thai - All Levels|Andrei|0|50
+2026-11-28|10:00|Muay Thai All Levels|Andrei|0|50
+2026-11-28|10:00|(7-12) Kids BJJ No-Gi All Levels|Belal|0|70
+2026-11-28|11:00|BJJ No-Gi All Levels|Belal|0|70
+2026-11-29|09:00|Sunday Open Mat|Oliver|0|70
+2026-11-29|10:00|Sunday Open Mat|Oliver|0|70
+2026-11-30|06:45|Muay Thai All Levels|Andrei|0|30
+2026-11-30|12:00|Muay Thai All Levels|Kru|0|50
+2026-11-30|12:00|BJJ No-Gi All Levels|Julian|0|50
+2026-11-30|16:30|(7-12) Kids Muay Thai - ADVANCED|Kru|0|50
+2026-11-30|16:30|Strength|Jack|0|20
+2026-11-30|16:30|(3-6) Kids BJJ|Julian|0|20
+2026-11-30|16:30|(7-12) Kids BJJ - BEGINNER|Jeshua|0|50
+2026-11-30|16:30|Kids BJJ - COMP (invite only)|Belal|0|50
+2026-11-30|17:15|(7-12) Kids Muay Thai - BEGINNER|Kru|0|50
+2026-11-30|17:15|Strength|Jack|0|20
+2026-11-30|18:00|Muay Thai Beginner|Kru|0|50
+2026-11-30|18:00|Strength|Jack|0|20
+2026-11-30|18:00|BJJ No-Gi Advanced|Belal|0|50
+2026-11-30|18:45|Strength|Jack|0|20
+2026-11-30|19:00|Muay Thai Advanced|Kru|0|40
+2026-11-30|19:00|BJJ No-Gi Beginner|Belal|0|70
+2026-12-01|06:45|Muay Thai All Levels|Andrei|0|30
+2026-12-01|12:00|BJJ No-Gi All Levels|Jeshua|0|50
+2026-12-01|12:00|Muay Thai All Levels|Kru|0|50
+2026-12-01|16:30|Fight Fit|Jack|0|20
+2026-12-01|16:30|(7-12) Kids Muay Thai - BEGINNER|Kru|0|50
+2026-12-01|16:30|(3-6) Kids Muay Thai|Andrei|0|20
+2026-12-01|16:30|(7-12) Kids BJJ - ADVANCED|Belal|0|40
+2026-12-01|17:15|Fight Fit|Jack|0|20
+2026-12-01|17:15|(7-12) Kids Muay Thai - ADVANCED|Kru|0|40
+2026-12-01|17:15|Kids Wrestling - ADVANCED|Amir|0|50
+2026-12-01|17:15|(7-12) Kids BJJ - BEGINNER|Belal|0|50
+2026-12-01|18:00|Fight Fit|Jack|0|20
+2026-12-01|18:00|Muay Thai Advanced|Kru|0|40
+2026-12-01|18:00|Wrestling|Kostya|0|40
+2026-12-01|18:00|BJJ Advanced|Belal|0|50
+2026-12-01|18:45|Fight Fit|Jack|0|20
+2026-12-01|19:00|BJJ No-Gi All Levels|Belal|0|70
+2026-12-01|19:30|Muay Thai Beginner|Kru|0|50
+2026-12-02|06:45|Muay Thai All Levels|Andrei|0|30
+2026-12-02|12:00|Muay Thai All Levels|Kru|0|50
+2026-12-02|12:00|BJJ No-Gi All Levels|Julian|0|50
+2026-12-02|16:30|Strength|Jack|0|30
+2026-12-02|16:30|(3-6) Kids BJJ|Julian|0|20
+2026-12-02|16:30|(7-12) Kids Muay Thai - BEGINNER|Kru|0|50
+2026-12-02|16:30|Kids BJJ - COMP (invite only)|Belal|0|50
+2026-12-02|17:15|(7-12) Kids Muay Thai - ADVANCED|Kru|0|50
+2026-12-02|17:15|Strength|Jack|0|30
+2026-12-02|17:15|(7-12) Kids BJJ - BEGINNER|Belal|0|50
+2026-12-02|17:15|Kids Wrestling|Amir|0|40
+2026-12-02|18:00|Muay Thai Beginner|Kru|0|50
+2026-12-02|18:00|Wrestling|Kostya|0|40
+2026-12-02|18:00|Strength|Jack|0|30
+2026-12-02|18:00|BJJ No-Gi Advanced|Belal|0|50
+2026-12-02|18:45|Strength|Jack|0|30
+2026-12-02|19:00|Muay Thai Advanced|Kru|0|40
+2026-12-02|19:00|BJJ No-Gi Beginner|Belal|0|70
+2026-12-03|06:45|Muay Thai All Levels|Andrei|0|30
+2026-12-03|12:00|BJJ No-Gi All Levels|Jeshua|0|50
+2026-12-03|12:00|Muay Thai All Levels|Kru|0|50
+2026-12-03|16:30|(7-12) Kids Muay Thai - BEGINNER|Kru|0|50
+2026-12-03|16:30|(3-6) Kids Muay Thai|Andrei|0|20
+2026-12-03|16:30|(7-12) Kids BJJ - ADVANCED|Belal|0|40
+2026-12-03|17:15|(7-12) Kids Muay Thai - ADVANCED|Kru|0|40
+2026-12-03|17:15|(7-12) Kids BJJ - BEGINNER|Jeshua|0|50
+2026-12-03|17:15|Kids BJJ - COMP (invite only)|Belal|0|50
+2026-12-03|18:00|Wrestling|Kostya|0|40
+2026-12-03|18:00|Muay Thai Advanced|Kru|0|40
+2026-12-03|18:00|BJJ Advanced|Belal|0|50
+2026-12-03|19:00|BJJ No-Gi All Levels|Belal|0|70
+2026-12-03|19:30|Muay Thai Beginner|Kru|0|50
+2026-12-04|06:45|Muay Thai All Levels|Andrei|0|30
+2026-12-04|12:00|BJJ No-Gi All Levels|Julian|0|50
+2026-12-04|16:30|Strength|Jack|0|20
+2026-12-04|16:30|(3-6) Kids BJJ No-Gi|Julian|0|20
+2026-12-04|16:30|Kids BJJ No-Gi - COMP (invite only)|Belal|0|50
+2026-12-04|16:30|Kids Wrestling - BEGINNER|Amir|0|40
+2026-12-04|17:15|Strength|Jack|0|20
+2026-12-04|17:15|(7-12) Kids BJJ No-Gi|Belal|0|50
+2026-12-04|17:15|Kids Wrestling - ADVANCED|Amir|0|40
+2026-12-04|18:00|Muay Thai All Levels|Kru|0|50
+2026-12-04|18:00|Strength|Jack|0|40
+2026-12-04|18:00|BJJ No-Gi All Levels|Belal|0|50
+2026-12-04|18:00|BJJ Intro Class||0|8
+2026-12-04|18:00|Wrestling|Kostya|0|30
+2026-12-04|18:45|Strength|Jack|0|40`;return parseLive(rows.trim().split('\n'))})();
+let EVENTS=[];
+let LIVE_FROM=LIVE[0].date,LIVE_TO=LIVE[LIVE.length-1].date;
+// Newer pulls arrive from Paul's Mac into the page's database (doc live/current: {at, rows:[...]}). The block above is the fallback.
+const applyLive=d=>{if(!d||!Array.isArray(d.rows))return;const rows=parseLive(d.rows).sort((a,b)=>(a.date+a.start).localeCompare(b.date+b.start));if(!rows.length)return;LIVE=rows;LIVE_FROM=rows[0].date;LIVE_TO=rows[rows.length-1].date;if(typeof d.at==='string')LIVE_AT=d.at.slice(0,40);if(Array.isArray(d.events))EVENTS=d.events.map(r=>{const [date,start,end,name]=String(r).split('|');return {date,start,end,name:name||''}}).filter(e=>/^\d{4}-\d\d-\d\d$/.test(e.date)&&/^\d\d:\d\d$/.test(e.start));try{render()}catch(e){}};
+const pullLive=async()=>{try{const r=await fetch('timetable.json?t='+Date.now(),{cache:'no-store'});if(!r.ok)return;const j=await r.json();applyLive({at:j.updated,rows:(j.classes||[]).map(c=>[c.date,c.start,c.class,c.coach||'',c.booked,c.capacity].join('|')),events:(j.events||[]).map(e=>[e.date,e.start,e.end,e.name,e.booked,e.capacity].join('|'))})}catch(e){}};
+pullLive();setInterval(pullLive,60*1000);
+const ymd=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+const lfam=n=>/Fight Fit|Strength/.test(n)?'SF':fam(n);
+// Find the Mindbody class that matches a timetable slot. undefined = date not covered by the live pull; null = not running.
+function gradingNote(){const now=new Date();const from=new Date(now.getFullYear(),now.getMonth(),now.getDate()+week*7),to=new Date(from);to.setDate(from.getDate()+7);
+ const f=ymd(from),t=ymd(to);const ev=EVENTS.concat(LIVE.filter(l=>/Grading/i.test(l.name)).map(l=>({date:l.date,start:l.start,name:l.name}))).filter(e=>e.date>=f&&e.date<t);
+ const seen=new Set();const by={};ev.forEach(e=>{const k=e.date+e.start+e.name;if(seen.has(k))return;seen.add(k);(by[e.date]=by[e.date]||[]).push(e)});
+ return Object.keys(by).sort().map(d=>{const dt=new Date(d+'T12:00:00');const list=by[d].sort((a,b)=>a.start.localeCompare(b.start));const grad=list.some(e=>/Grading/i.test(e.name));
+  return `<b>${grad?'Grading day':'Event'} ${esc(dt.toLocaleDateString('en-AU',{weekday:'short',day:'numeric',month:'short'}))}:</b> ${grad?'no BJJ classes. ':''}${list.map(e=>esc(e.name)+' '+fmtT(new Date(d+'T'+e.start+':00'))).join(', ')}. `}).join('')}
+function liveMatch(dt,c){const d=ymd(dt);if(d<LIVE_FROM||d>LIVE_TO)return undefined;
+ const f=fam(c.prog);let cand=LIVE.filter(l=>l.date===d&&l.start===c.start&&lfam(l.name)===f&&!/Grading/i.test(l.name));
+ if(c.ages==='adult')cand=cand.filter(l=>!/Kids/.test(l.name));else if(c.ages==='3-6')cand=cand.filter(l=>/3-6/.test(l.name));else cand=cand.filter(l=>/Kids/.test(l.name)&&!/3-6/.test(l.name)&&!/COMP/.test(l.name));
+ const lv=c.level.toUpperCase();if(lv!=='ADVANCED')cand=cand.filter(l=>!/ADVANCED/i.test(l.name));
+ if(!cand.length)return null;
+ return cand.find(l=>l.name.toUpperCase().includes(lv))||cand.find(l=>!/BEGINNER|ADVANCED/i.test(l.name))||cand[0]}
+// Booking rules: which classes to offer this caller. Returns [{c, why}] where why is a short label.
+function pickClasses(mode,who){
+ const st=D.styles,adv=D.trained==='yes'&&(D.expLong==='Has a belt');
+ const want=new Set();st.forEach(s=>{if(/Muay|Not sure|Other/.test(s))want.add('MT');if(/BJJ/.test(s))want.add('BJJ');if(/Wrestling/.test(s))want.add('WR');if(/Strength/.test(s))want.add('SF')});
+ if(!want.size)want.add('MT').add('BJJ');
+ const out=[];const add=(c,tag)=>out.push({c,tag});
+ if(mode==='kids'){const ages=(who||[]).map(k=>k.age);const has36=ages.includes('3 to 6'),has712=ages.includes('7 to 12');
+  const kidAdv=D.trained==='yes'&&(D.expLong==='2+ years'||D.expLong==='Has a belt');
+  MASTER.forEach(c=>{if(!/^Kids/.test(c.prog)||/Comp/.test(c.level))return;const f=fam(c.prog);
+   const styleOk=want.has(f)||(want.has('SF')&&!want.has('MT')&&!want.has('BJJ')&&!want.has('WR'));if(!styleOk)return;
+   if(has36&&!has712&&c.ages==='3-6')add(c,'3 to 6');
+   if(has712&&!has36&&c.ages==='7-12'){if(c.level==='Advanced'){if(kidAdv)add(c,'Advanced 7 to 12')}else add(c,c.level==='Beginner'?'Beginners 7 to 12':'All levels 7 to 12')}
+   if(has36&&has712&&c.ages==='3-6'){const pair=MASTER.find(o=>o.dow===c.dow&&o.start===c.start&&o.ages==='7-12'&&o.level!=='Advanced'&&!/Comp/.test(o.level)&&fam(o.prog)===f);if(pair)add(c,'Both kids, same time')}});
+  return out}
+ const u18self=D.who==='self'&&D.over18==='no';
+ MASTER.forEach(c=>{if(/^Kids/.test(c.prog)||c.prog==='BJJ Open Mat')return;const f=fam(c.prog);if(!want.has(f))return;const am=c.start==='06:45',lunch=c.start==='12:00',sat=c.dow===6;
+  if(f==='MT'){if(c.level==='Intro')add(c,'Introduction lesson');else if(am&&(c.dow===3||c.dow===5)&&!u18self)add(c,'Morning (deal breaker only)');else if(sat)add(c,'Saturday (confirm intro time)')}
+  if(f==='BJJ'){if(adv){if(c.level==='Advanced'||(c.level==='All Levels'&&!lunch&&!sat))add(c,c.level==='Advanced'?'Advanced (blue belt and up)':'All levels')}
+   else if(c.level==='Intro')add(c,'Introduction lesson');
+   else if((c.level==='Beginner'||c.level==='All Levels')&&c.start==='19:00'&&c.dow>=1&&c.dow<=4)add(c,'Introduction lesson');
+   }
+  if(f==='WR'&&c.level==='All Levels')add(c,'All levels');
+  if(f==='SF')add(c,'Strength and Fitness')});
+ return out}
+// Next real class times: master timetable rules, checked against the live Mindbody pull (spots left, cancellations).
+function slots(mode){mode=mode||(kid()&&!teenKids()||youngKids()?'kids':'adult');const now=new Date();const start=new Date(now.getFullYear(),now.getMonth(),now.getDate()+week*7);
+ const who=mode==='kids'?D.kids.filter(k=>KIDAGES.includes(k.age)):null;const list=pickClasses(mode,who);const out=[];
+ for(let i=0;i<7;i++){const d=new Date(start);d.setDate(start.getDate()+i);const w=d.getDay();
+  list.filter(x=>x.c.dow===w).forEach(({c,tag})=>{const [h,m]=c.start.split(':').map(Number);const dt=new Date(d);dt.setHours(h,m,0,0);if(dt<now)return;
+   const cls=c.start==='06:45'?'AM':mode==='kids'?'Kids':fam(c.prog);const id=dt.toISOString()+c.prog+c.level;
+   if(out.some(o=>o.id===id))return;
+   const lv=liveMatch(dt,c);if(lv===null)return;
+   const base=c.prog.replace(/^Kids /,'Kids ');let lab;
+   if(tag==='Introduction lesson')lab=`${fam(c.prog)==='BJJ'?'BJJ':c.prog} introduction lesson`;
+   else if(tag==='Both kids, same time')lab=`${c.prog}: 3 to 6 and 7 to 12, same time`;
+   else lab=`${c.prog} · ${tag}`;
+   out.push({id,dt,cls,lab,full:lv?lv.left<=0:false,live:lv||null,intro:tag==='Introduction lesson',kids:mode==='kids'})})}
+ return out.sort((a,b)=>a.dt-b.dt)}
+const fmtDay=d=>d.toLocaleDateString('en-AU',{weekday:'long',day:'numeric',month:'long'});
+const fmtT=d=>d.toLocaleTimeString('en-AU',{hour:'numeric',minute:'2-digit'}).replace(':00','').replace(' ','').toLowerCase();
+function arrival(s){s=s===undefined?D.slot:s;if(!s)return null;const d=new Date(s.dt);if(s.cls==='AM'){d.setHours(6,30)}else d.setMinutes(d.getMinutes()-(s.kids?20:30));return d}
+function bookLine(s,who){const a=arrival(s);return `${who?who+': ':''}${fmtDay(s.dt)}, ${s.lab} at ${fmtT(s.dt)}. Please arrive at ${fmtT(a)}.`}
+const steps=[
+ {sec:"Who they are",t:"Greeting",r:()=>`<p class="say">"Welcome to Extreme Mixed Martial Arts, ${D.staff&&D.staff!=='Other'?`<span class="nm" data-live="staff">${esc(D.staff)}</span>`:'<span class="nm" data-live="staff">[choose your name at the top]</span>'} speaking. Can I start by getting your name, please?"</p><p class="note">Your name comes from the <b>Team member</b> box at the top. It stays set for every call.</p><div class="fields">${field('first','Caller\'s first name','e.g. James')}</div><p class="note">Type the caller's name here. It fills into the next steps, like "How are you going today, James?" Asking first puts you in control from the first second.</p>`},
+ {sec:"Who they are",t:"Soften",r:()=>`<p class="say">"How are you going today, ${nm()}?"</p><p class="say">"And how can we help you today, ${nm()}?"</p><p class="note">Say their name back. It shows you listened. Then listen and note everything. Price asked here? Use the price help below.</p>`},
+ {sec:"Who they are",t:"Take the lead",r:()=>`<p class="say">"I can definitely help you with that. Just a few quick questions. Can I grab your last name?"</p><div class="fields">${field('last','Last name')}</div>`},
+ {sec:"Who they are",t:"How they heard",r:()=>`<p class="say">"How did you hear about us?"</p>${ticks('source',ov(SRC),true)}${D.source.includes('Member referral')?`<div class="fields">${field('referrer','Who referred them?','Name, and style if known')}</div>`:''}`},
+ {sec:"Who they are",t:"Mobile",r:()=>`${D.fromPhone?`<p class="say">"Is the number you're calling from, <span class="nm" data-live="mobile">${esc(D.mobile)}</span>, the best mobile to get you on?"</p><div class="fields">${field('mobile','Mobile','04__ ___ ___','tel')}</div><p class="note">Filled in from the phone system. If they say no, type the right one in.</p>`:`<p class="say">"What's the best mobile number to get you on?"</p><div class="fields">${field('mobile','Mobile','04__ ___ ___','tel')}</div><p class="say">"So that's <span class="nm" data-live="mobile">${esc(D.mobile)||'04__ ___ ___'}</span>. Is that right?"</p>`}${ticks('mobileOk',[['yes','Caller confirmed']],false)}`},
+ {sec:"What they need",t:"Who it's for",r:whoStep},
+ {sec:"What they need",t:"Style",r:()=>`<p class="say">"So I can get a better idea of what you're after, is there a specific style you're interested in?"</p>${ticks('styles',ov(STY),true)}<details class="help" style="padding:8px 12px"><summary>Asked what a style is? Keep it to a sentence or two</summary><div class="note"><ul><li><b>Muay Thai:</b> "High repetition and a cardio workout. You\'re learning punching, kicking, knees and elbows."</li><li><b>BJJ:</b> "Takedowns and grappling on the floor. You learn how to get out if someone\'s sitting on top of you. A little bit similar to wrestling."</li><li><b>Wrestling:</b> "The art of the takedown, without the gi. Getting your opponent to the floor, and defending when someone\'s trying to get you to the floor."</li><li><b>MMA:</b> "All three are good for MMA. You\'ll get better at MMA faster if you focus on each discipline with a specialist."</li></ul></div></details>${D.styles.includes('Other (boxing, karate, judo, MMA...)')?`<div class="box warn"><b>Never say no</b>Boxing or kickboxing: "Muay Thai is perfect. It's boxing with the kicks, knees and elbows. Have you trained in martial arts before?" Boxed for years? "Sounds like your hands are pretty good. Now it's time to work on your kicks. Let's go ahead and get you booked in. I've got two spots available, ___ or ___. Which one is better for you?" Karate or Taekwondo: suggest Muay Thai. Judo: suggest jiu-jitsu. Anything else: ask their goals and suggest the best fit. MMA: first ask "Have you trained in MMA before?" If not, they're a beginner: suggest BJJ (Muay Thai or wrestling are fine too), "You'll need all of it for MMA anyway, so it's good to get a foundation."</div>`:''}${D.styles.includes('Not sure')?`<div class="box warn"><b>Not sure</b>Ask their goals next, then recommend a style. Muay Thai is the default for beginners.</div>`:''}`},
+ {sec:"What they need",t:"Goals",r:()=>{const st=D.styles.filter(x=>x!=='Not sure'&&!/^Other/.test(x))[0];if(kid()){const kn=D.kids.map(k=>k.name).filter(Boolean).join(' and ')||'[child\'s name]';return `<p class="say">"What are some things you were hoping <span class="nm">${esc(kn)}</span> would get out of the training?"</p><p class="note">Ask the parent what <b>they</b> want for their child, not what the child wants. Parents often say confidence, focus, discipline, fitness or making friends.</p>${ticks('goals',ov(GOALS),true)}`}return `<p class="say">${st?`"What are some of the goals you wanted to get out of training in ${esc(st)}?"`:'"What are you hoping to get out of training?"'}</p><p class="note">Not sure of their goals? Give them options:</p><p class="say">"Are you just looking to get fit, do it as a hobby, or do you want to take it a bit more serious and compete?"</p>${ticks('goals',ov(GOALS),true)}<p class="note">Always ask. Not sure of a style? Recommend one from their goals: "Based on what you've told me, I'd suggest..."</p>`}},
+ {sec:"What they need",t:"Experience",r:expStep},
+ {sec:"The booking",t:"Free trial",r:()=>kid()?`<p class="say">"Kids get two free lessons to try us out."</p>`:`<p class="say">"Have you heard about our 30-day free trial? It's 30 days of free training to try us out. However, we do have some great deals if you want to start straight away, so that's something to have a think about before you come in."</p><p class="note">Why it matters: The free trial is our offer. It\'s the hook that gets people through the door, so say it the same way every time. Mentioning our great deals now is a pre-frame, so when they come in and hear about starting straight away, it\'s not a surprise.</p><p class="note">Visitors to Melbourne (here under 3 months) get a casual or holiday pass instead.</p>`},
+ {sec:"The booking",t:"Book it",r:bookStep},
+ {sec:"The booking",t:"Email",r:()=>`<p class="say">"What's the best email address to send confirmation of the booking to?"</p><div class="fields">${field('email','Email','','email')}${field('email2','Type it again to confirm','','email')}</div><p class="chk" id="emailchk"></p><p class="note">Read it back letter by letter if the two don't match.</p>`},
+ {sec:"The booking",t:"Referral",r:()=>`<p class="say">"Is there anyone else who might want to come to this free trial class with you?"</p>${D.friends.map((f,i)=>`<div class="group" style="border:1px solid var(--line);border-radius:10px;padding:12px"><span>Friend ${i+1} <button class="linkbtn" data-rmfr="${i}">Remove</button></span><div class="fields"><label class="f">Name<input id="fr-${i}-name" data-ff="${i}" data-fk="name" value="${esc(f.name)}" autocomplete="off"></label><label class="f">Mobile<input id="fr-${i}-mobile" data-ff="${i}" data-fk="mobile" type="tel" value="${esc(f.mobile)}" autocomplete="off"></label></div><div class="ticks" style="margin-top:8px"><span class="note" style="align-self:center">"Are they over 18?"</span>${[['yes','18 or over'],['no','Under 18']].map(([v,l])=>`<label><input type="radio" name="fr18${i}" data-fr18="${i}" data-v="${v}" ${f.over18===v?'checked':''}>${l}</label>`).join('')}</div>${f.over18==='no'?`<p class="note">Under 18: a parent or guardian needs to come with them, to sign the waiver at reception before their introduction lesson.</p>`:''}</div>`).join('')}<div><button class="copy" style="width:auto;margin:0" data-addfr="1">+ Add ${D.friends.length?'another':'a'} friend</button></div><p class="note"><b>Always ask, every call.</b> It brings more people in. Yes? Get their name and mobile, and check they're over 18. "Do you know their mobile? We'll put them in the system and text them a confirmation." Book them into the same class. A group coming together counts as one booking, because we show them around and present to them all at once.</p>`},
+ {sec:"Getting them ready",t:"Arrival time",r:()=>{const b=[];if(D.slot)b.push(`<p class="say">"${D.slot2?kidNames(k=>KIDAGES.includes(k.age))+'\'s':'Your'} class is on ${fmtDay(D.slot.dt)} at ${fmtT(D.slot.dt)}, so please arrive at <span class="nm">${fmtT(arrival(D.slot))}</span>."</p>`);if(D.slot2)b.push(`<p class="say">"${kidNames(k=>k.age==='13+')}'s class is on ${fmtDay(D.slot2.dt)} at ${fmtT(D.slot2.dt)}, so please arrive at <span class="nm">${fmtT(arrival(D.slot2))}</span>."</p>`);
+  return b.length?b.join('')+`<p class="note">Kids classes: arrive 20 minutes early. Adults classes (including 13 and over): 30 minutes. 6:45am class: arrive 6:30, when the gym opens. That time covers the profile, waiver, a chat about goals, a tour and meeting the coach.</p>`:`<p class="say">"Your class starts at [time], so please arrive at [time]."</p><p class="note">Pick a class in "Book it" and this fills in by itself.</p>`}},
+ {sec:"Getting them ready",t:"Where we are",r:()=>`<p class="say">"We're at 660 Warrigal Rd, Malvern East, on the corner of Warrigal and Waverley Rds, opposite Guzman y Gomez. There's a car park at the back via Peverill St."</p><p class="note">Always say Malvern East, so they know where to go and what to put in the GPS.</p>`},
+ {sec:"Getting them ready",t:"What to bring",r:()=>{const y=kid()||u18();const o=y?['T-shirt and shorts (no school uniform)','Slides or thongs','A parent to sign the waiver']:['Workout clothes (shorts and T-shirt, or leggings; no jeans)','Sleeved top (BJJ or wrestling)','Slides or thongs','Photo ID'];return `<p class="say">"${y?'Wear a T-shirt and shorts, not school uniform, and bring slides or thongs. A parent needs to come to sign the waiver.':'Wear comfortable workout clothes, like shorts and a T-shirt, or leggings if you like, and a sleeved top for BJJ or wrestling. Bring slides or thongs, because we train barefoot, and bring photo ID.'}"</p>${ticks('bring',ov(o),true,'Told them')}<p class="note">Strength and Fitness: runners and a sweat towel. No jewellery. Never say "you don't need anything".</p>`}},
+ {sec:"Getting them ready",t:"Close and pre-frame",r:()=>{return `<p class="say">"So that's ${D.slot?bookLine(D.slot,D.slot2?kidNames(k=>KIDAGES.includes(k.age)):''):'[day] at [time]. Please arrive at [time].'}${D.slot2?' And '+bookLine(D.slot2,kidNames(k=>k.age==='13+')):''} The session goes for an hour. Leave some time at the end so we can go through all the programs with you."</p><p class="say">"If you're happy with what you see, we'll make you a member. Sound good?"</p><p class="say">"Great, we'll see you then. Have a good day, ${nm()}."</p>`}},
+ {sec:"After the call",t:"Mindbody",r:()=>{const it=afterItems();const done=it.filter(x=>D.after.includes(x)).length;return `<p class="note">Use <b>Copy for Mindbody</b> on the right, then tick each one off as you do it.</p><div class="ticks" style="flex-direction:column;align-items:flex-start">${it.map(x=>`<label><input type="checkbox" data-t="after" data-v="${esc(x)}" ${D.after.includes(x)?'checked':''}>${x}</label>`).join('')}</div><p class="chk ${done===it.length?'good':''}">${done===it.length?'✓ All done. This call is finished.':`${done} of ${it.length} done`}</p>`}}
+];
+function afterItems(){const a=['Booking entered in Mindbody with their real first and last name (never "TBC")','All 5 subscription boxes ticked, so the confirmations go out','Lead source set','"New Prospect" contact log added'];
+ const fr=D.friends.filter(f=>f.name).length;if(fr)a.push(fr>1?`All ${fr} friends added to Mindbody in the same class and texted a confirmation`:'Friend added to Mindbody in the same class and texted a confirmation');
+ if([D.slot,D.slot2].some(s=>s&&s.cls==='AM'))a.push('Waiver emailed, and WhatsApp to Paul and Andrei set for the night before');
+ if(u18()&&D.parentComing==='check')a.push('Call-back reminder set (checking with parent)');
+ if(kid()&&D.kids.some(k=>k.age==='Under 3'))a.push('Note set to call back when the child turns 3');
+ if(!D.slot)a.push('Not booked? "New Prospect" contact log with "Follow up by this date" set to the day you agreed to call back');
+ return a}
+function whoStep(){let h=`<p class="say">"Is this for yourself or a child?"</p>`+ticks('who',[['self','For themselves'],['child','For a child']],false);
+ if(D.who==='self'){h+=`<p class="say">"Great, are you over 18?"</p>`+ticks('over18',[['yes','18 or over'],['no','Under 18']],false);
+  if(D.over18==='no')h+=`<div class="box warn"><b>Under 18</b>"Because you're under 18, we'll need a parent or guardian to come with you, to sign the waiver at reception before your introduction lesson. Do you think they can come down?" Need to check? Book it anyway and ask them to call back to confirm. Then: "If you wanted to join up, would that be something you'd pay for, or would your parents?" Either way, a parent comes and signs the waiver, and the membership if they join, because under 18s can't legally sign a contract.<div style="margin-top:10px">${ticks('parentComing',[['yes','Confirmed: parent is coming'],['check','Checking with parent, will call back']],false)}</div></div>`;}
+ if(kid()){h+=`<p class="say">"What's your child's name, and how old are they?" <span class="note">Then: "Is there anyone else, a brother or sister, who'd like to try too?"</span></p>`;
+  const m={'3 to 6':'Book the 3 to 6 class. Any kids beginner class is fine for the trial.','7 to 12':'Book the 7 to 12 class. Any kids beginner class is fine for the trial (wrestling has one too). Advanced kid, like a grey belt who competes, wrestling now, or here for competition training? Book the advanced or competition class. Nearly 13 and big or mature for their age? Ask "When does he turn 13?" If it\'s soon, you can book the adults introduction lesson: the coach will see how he goes, and he can move back to the kids program for a couple of months if needed.','13+':'"We\'ve got lots of 13 to 15 year olds in our adults classes, so plenty of the right training partners." A parent still signs.','Under 3':'"He\'s probably a little bit young. When does he turn 3?" Then: "I\'ll put a note in the system to give you a call then. How does that sound?"'};
+  D.kids.forEach((k,i)=>{h+=`<div class="group" style="border:1px solid var(--line);border-radius:10px;padding:12px"><span>Child ${i+1}${D.kids.length>1?` <button class="linkbtn" data-rmkid="${i}">Remove</button>`:''}</span><div class="fields"><label class="f">Name<input id="k-${i}" data-kf="${i}" value="${esc(k.name)}" autocomplete="off"></label><label class="f">Age<input id="ky-${i}" data-ky="${i}" value="${esc(k.yrs)}" inputmode="decimal" placeholder="e.g. 6" autocomplete="off"></label></div><div class="ticks">${[['3 to 6','3 to 6'],['7 to 12','7 to 12'],['13+','13 or over'],['Under 3','Under 3']].map(([v,l])=>`<label><input type="radio" name="kage${i}" data-ka="${i}" data-v="${v}" ${k.age===v?'checked':''}>${l}</label>`).join('')}</div>${k.age?`<p class="note">${m[k.age]}</p>`:''}</div>`});
+  if(D.kids.length<4)h+=`<div><button class="copy" style="width:auto;margin:0" data-addkid="1">+ Add another child</button></div>`;
+  const ages=D.kids.map(k=>k.age);
+  if(ages.includes('3 to 6')&&ages.includes('7 to 12'))h+=`<div class="box ok"><b>Same time for both</b>The 3 to 6 and 7 to 12 classes run at the same time (Tuesday or Thursday at 4:30), so book them together and the parent only comes in once. Never different days.</div>`;
+  else if(D.kids.filter(k=>KIDAGES.includes(k.age)).length>1)h+=`<div class="box ok"><b>Same class</b>Book them into the same class at the same time.</div>`;
+  if(ages.includes('13+')&&ages.some(a=>KIDAGES.includes(a)))h+=`<div class="box warn"><b>Can't be the same time</b>13 and over train in the adults program, which starts at 6pm, so they can't train with the kids class. Book the 13+ child into an adults intro separately.</div>`;}
+ return h}
+function expStep(){const kn=D.kids.map(k=>k.name).filter(Boolean).join(' and ');const k=kid();
+ let h=(k?`<p class="say">"Has ${kn?`<span class="nm">${esc(kn)}</span>`:'[child\'s name]'} trained before?"</p>`:`<p class="say">"Have you trained in martial arts before?"</p>`)+ticks('trained',[['no','No'],['yes','Yes']],false);
+ if(D.trained==='yes'){h+=ticks('expStyles',ov(EXPS),true,'"What style?"')+ticks('expLong',ov(['Under 6 months','6 to 24 months','2+ years','Has a belt']),false,'"How long for?"')
+  +ticks('expNow',[['yes','Yes'],['no','No']],false,k?'"Are they training at the moment?"':'"Are you training at the moment?"');
+  if(D.expNow==='yes')h+=`<div class="fields">${field('expWhere',k?'Where are they training?':'Whereabouts are you training?','Gym name')}</div>`;
+  if(D.expNow==='no')h+=ticks('expAgo',ov(['Under a year ago','1 to 3 years ago','3+ years ago']),false,'"How long has it been since you last trained?"');
+  h+=`<p class="note">Big claims, like "10 years and a couple of fights"? Ask all the follow-ups before you book a higher class. People who oversell have often done less.</p>`}
+ const exp=D.trained==='yes'&&(D.expLong==='2+ years'||D.expLong==='Has a belt');
+ const rusty=D.expNow==='no'&&(D.expAgo==='1 to 3 years ago'||D.expAgo==='3+ years ago');
+ let msg='';
+ if(D.trained==='no'||(D.trained==='yes'&&!exp&&D.expLong))msg='Book the introduction lesson. It\'s semi-private and built for people with little or no experience.';
+ else if(exp&&rusty)msg='Not trained for more than a year: suggest the beginners class, kindly. "Since you\'re coming back after a break, I\'d suggest our beginners class. I\'m sure the technique\'s still there, we just want to build your fitness back up slowly. It\'s a pretty good standard there anyway. And the coaches will assess you. If they think you\'re ready for the advanced class, they\'ll let you know for the next lesson."';
+ else if(exp)msg='Experienced: "I\'ve got a spot on Thursday at ___." 2+ years but no belt (or a white belt): still book the beginners class. The coach moves them up if they\'re ready.<ul><li><b>BJJ:</b> white belts go to the beginners class. Blue belt and up go straight to advanced.</li><li><b>All-levels classes</b> (BJJ and Muay Thai) suit beginners and advanced, so they\'re always fine.</li><li><b>Muay Thai:</b> always book an introduction lesson time. It runs at the same time as the beginners class, and the coach assesses them on the night.</li><li><b>Wrestling:</b> one all-levels class.</li></ul>'+(D.expNow?'':'Not sure yet? Ask if they\'re training at the moment.');
+ if(msg)h+=`<div class="box ok">${msg}</div>`;
+ return h}
+function slotGrid(mode,key){const s=slots(mode);const sel=D[key];return `<div class="slotgrid">${s.length?s.map(x=>`<button class="slot ${x.full?'full':''} ${sel&&sel.id===x.id?'pick':''}" data-s="${x.id}" data-m="${mode}" data-key="${key}" ${x.full?'disabled aria-disabled="true"':''}><b>${x.dt.toLocaleDateString('en-AU',{weekday:'short',day:'numeric',month:'short'})} · ${fmtT(x.dt)}</b><small>${x.lab}</small>${x.live?`<small class="live">${x.full?'FULL':x.live.left+' spots left'}${x.live.coach&&!x.intro?' · '+esc(x.live.coach):''}</small>`:'<small class="live off">Check Mindbody for spots</small>'}</button>`).join(''):'<p class="note">No sessions this week for that style.</p>'}</div>`}
+function bookStep(){const mixed=youngKids()&&teenKids();const first=kid()&&(youngKids()||!teenKids())?'kids':'adult';
+ return `<p class="say">"The way we get started from here is we book you in for your introduction lesson. I have two spots available, ___ or ___. Which one is better for you?"</p>
+ <div class="slots"><div class="week"><button data-w="0" class="${week===0?'pick':''}">Next 7 days</button><button data-w="1" class="${week===1?'pick':''}">The week after</button><span class="note">${gradingNote()}Live from Mindbody (updated ${esc(LIVE_AT)}): cancelled classes are hidden and spots left are real. Limit: 3 introduction lesson bookings per front desk consultant on shift. A group coming together counts as 1.</span></div>
+ ${mixed?`<div class="group"><span>${esc(kidNames(k=>KIDAGES.includes(k.age)))} (kids class)</span></div>`:''}${slotGrid(first,'slot')}
+ ${mixed?`<div class="group"><span>${esc(kidNames(k=>k.age==='13+'))} (13+, adults intro, from 6pm)</span></div>${slotGrid('adult','slot2')}`:''}</div>
+ <div class="note"><ul><li>Wants mornings or lunch? Suggest an evening or weekend introduction lesson first: "Our introduction lessons have designated coaches who teach people their first lesson. Morning and lunch classes only have one coach, so it\'s not the same experience."</li><li>Under 18? Don\'t book them into the morning (6:45am) classes. Their first class is an evening class, with the parent there to sign in person. Only exception: the parent comes to the morning class with them.</li><li>If mornings or lunch are a deal breaker, book it without fuss. Mornings: Wednesday or Friday at 6:45am, and take their email for the waiver.</li><li>Neither time works? If they ask for a day ("Anything on Friday?"), check that day and book it. Flat out this week? Tap "The week after" and offer two spots then.</li><li>Unsure: "We book out fast. Let's pencil you in, and if you can't make it, just let us know."</li></ul></div>`}
+function profileRows(){const a=arrival();return [
+ ['Taken by',D.staff],['Name',[D.first,D.last].filter(Boolean).join(' ')],['Mobile',D.mobile?D.mobile+(D.mobileOk==='yes'?' ✓':''):''],['Email',D.email?D.email+(emailState()==='good'?' ✓':emailState()==='bad'?' (check, not matching)':''):''],
+ ['Source',D.source.filter(x=>x!=='Member referral').concat(D.source.includes('Member referral')?['Referral'+(D.referrer?': '+D.referrer:'')]:[]).join(', ')],
+ ['For',D.who==='self'?(D.over18==='no'?'Themselves (under 18, parent to sign'+(D.parentComing==='yes'?': parent confirmed coming)':D.parentComing==='check'?': checking with parent, call back)':')'):D.over18==='yes'?'Themselves (18+)':'Themselves'):D.who==='child'?D.kids.map((k,i)=>{const p=[k.yrs,k.age].filter(Boolean).join(', ');return `${k.name||'Child '+(i+1)}${p?' ('+p+')':''}`}).join('; '):''],
+ ['Style',D.styles.join(', ')],['Goals',D.goals.join(', ')],
+ ['Experience',D.trained==='no'?'None':D.trained==='yes'?[D.expStyles.join('/'),D.expLong,D.expNow==='yes'?'training now'+(D.expWhere?' at '+D.expWhere:''):D.expNow==='no'?'not training'+(D.expAgo?' (last trained '+D.expAgo.toLowerCase()+')':''):''].filter(Boolean).join(', '):''],
+ ['Booking',[D.slot,D.slot2].filter(Boolean).map(s=>`${s.lab}, ${fmtDay(s.dt)} ${fmtT(s.dt)}`).join('; ')],['Arrive',[D.slot,D.slot2].filter(Boolean).map(s=>fmtT(arrival(s))).join('; ')],
+ ['Coming with',D.friends.filter(f=>f.name||f.mobile).map(f=>[f.name,f.mobile,f.over18==='no'?'(under 18, parent to sign)':f.over18==='yes'?'(18+)':''].filter(Boolean).join(' ')).join('; ')],
+ ['Counts as',D.slot?`1 booking${D.friends.some(f=>f.name)?' (group of '+(1+D.friends.filter(f=>f.name).length)+')':''}${D.slot2?' + 1 booking (13+ adults intro)':''}`:'']]}
+function emailState(){const a=D.email.trim().toLowerCase(),b=D.email2.trim().toLowerCase();if(!a||!b)return '';return a===b&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(a)?'good':'bad'}
+function renderChecks(){const el=document.getElementById('emailchk');if(el){const s=emailState();el.className='chk '+s;el.textContent=s==='good'?'✓ Emails match':s==='bad'?(D.email.trim().toLowerCase()===D.email2.trim().toLowerCase()?'That doesn\'t look like a full email address':'The two emails don\'t match. Check it with the caller.'):''}
+ const sel=document.getElementById('f-staff');if(sel)sel.classList.toggle('unset',!D.staff)}
+function renderProfile(){renderChecks();document.getElementById('prof').innerHTML=profileRows().map(([k,v])=>`<dt>${k}</dt><dd class="${v?'':'empty'}">${v?esc(v):'—'}</dd>`).join('')}
+function render(){const s=steps[cur];seen.add(cur);let h='',sec='';
+ steps.forEach((x,i)=>{if(x.sec!==sec){sec=x.sec;h+=`<h2>${sec}</h2>`}h+=`<button data-i="${i}" class="${i===cur?'on':''} ${seen.has(i)&&i!==cur?'done':''}" aria-current="${i===cur?'step':'false'}"><span class="n">${i+1}</span><span>${x.t}</span></button>`});
+ document.getElementById('rail').innerHTML=h;
+ document.getElementById('card').innerHTML=`<div class="eyebrow">Step ${cur+1} of ${steps.length} · ${s.sec}</div><h3>${s.t}</h3>${s.r()}<div class="nav"><button class="back" ${cur===0?'disabled':''}>Back</button><button class="next">${cur===steps.length-1?'Start a new call':'Next'}</button></div>`;
+ renderProfile()}
+document.addEventListener('input',e=>{if(e.target.dataset.ff!==undefined){D.friends[+e.target.dataset.ff][e.target.dataset.fk]=e.target.value;renderProfile();return}
+ if(e.target.dataset.kf!==undefined){D.kids[+e.target.dataset.kf].name=e.target.value;renderProfile();return}
+ if(e.target.dataset.ky!==undefined){D.kids[+e.target.dataset.ky].yrs=e.target.value;renderProfile();return}
+ const k=e.target.dataset.f;if(!k)return;D[k]=e.target.value;
+ if(k==='staff'){render();return}
+ document.querySelectorAll('.nm').forEach(el=>{if(!el.dataset.live)el.textContent=D.first||'[name]'});
+ const lm=document.querySelector('[data-live="mobile"]');if(lm)lm.textContent=D.mobile||'04__ ___ ___';renderProfile()});
+document.addEventListener('change',e=>{if(e.target.dataset.fr18!==undefined){D.friends[+e.target.dataset.fr18].over18=e.target.dataset.v;render();return}
+ if(e.target.dataset.ka!==undefined){D.kids[+e.target.dataset.ka].age=e.target.dataset.v;D.slot=null;D.slot2=null;render();return}
+ const k=e.target.dataset.t;if(!k)return;const v=e.target.dataset.v;
+ if(Array.isArray(D[k])){D[k]=e.target.checked?[...D[k],v]:D[k].filter(x=>x!==v)}else D[k]=v;
+ if(k==='who'){D.over18='';D.kids=[{name:'',age:'',yrs:''}];D.slot=null;D.slot2=null}if(k==='styles'){D.slot=null;D.slot2=null}if(k==='over18'&&v==='yes')D.parentComing='';render()});
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.i){cur=+b.dataset.i;render();return}
+ if(b.dataset.w){week=+b.dataset.w;render();return}
+ if(b.dataset.addfr){D.friends.push({name:'',mobile:'',over18:''});render();const el=document.getElementById('fr-'+(D.friends.length-1)+'-name');if(el)el.focus();return}
+ if(b.dataset.rmfr){D.friends.splice(+b.dataset.rmfr,1);render();return}
+ if(b.dataset.addkid){D.kids.push({name:'',age:'',yrs:''});render();const el=document.getElementById('k-'+(D.kids.length-1));if(el)el.focus();return}
+ if(b.dataset.rmkid){D.kids.splice(+b.dataset.rmkid,1);D.slot=null;D.slot2=null;render();return}
+ if(b.dataset.s){const x=slots(b.dataset.m).find(y=>y.id===b.dataset.s);if(x&&!x.full){D[b.dataset.key]=x;render()}return}
+ if(b.id==='copy'){const t=profileRows().filter(r=>r[1]).map(r=>r[0]+': '+r[1]).join('\n');const done=()=>{document.getElementById('copied').textContent='Copied. Paste it into Mindbody.'};
+  try{navigator.clipboard.writeText(t).then(done,()=>{document.getElementById('copied').textContent='Copy blocked here. Select the profile text instead.'})}catch(_){document.getElementById('copied').textContent='Copy blocked here. Select the profile text instead.'}return}
+ if(b.classList.contains('next')){if(cur===steps.length-1){const keep=D.staff;try{sessionStorage.setItem('staff',keep)}catch(_){}try{history.replaceState(null,'',location.pathname)}catch(_){}location.reload();return}cur++;render();window.scrollTo({top:0,behavior:'smooth'});return}
+ if(b.classList.contains('back')&&cur>0){cur--;render()}});
+document.addEventListener('keydown',e=>{if(e.target.closest('input,textarea'))return;if(e.key==='ArrowRight'&&cur<steps.length-1){cur++;render()}if(e.key==='ArrowLeft'&&cur>0){cur--;render()}});
+// Example caller so the page opens in a working state
+
+try{const st=sessionStorage.getItem('staff');if(st){D.staff=st;Object.assign(D,{first:'',source:[],who:'',over18:''})}}catch(_){}
+// Caller number from the phone system's call popup, e.g. ...?caller=0412345678
+function readCaller(){try{const q=new URLSearchParams((location.search+'&'+location.hash.replace(/^#/,'')).replace(/^\?/,''));
+ for(const k of ['caller','callerid','caller_id','callernumber','CallerNumber','number','phone','from']){const v=q.get(k);if(v&&v.replace(/\D/g,'').length>=8)return v.replace(/\D/g,'')}}catch(_){}return ''}
+function fmtNum(d){if(d.startsWith('61'))d='0'+d.slice(2);if(/^04\d{8}$/.test(d))return d.replace(/(\d{4})(\d{3})(\d{3})/,'$1 $2 $3');if(/^0[2378]\d{8}$/.test(d))return d.replace(/(\d{2})(\d{4})(\d{4})/,'($1) $2 $3');return d}
+const CALLER=readCaller();
+if(CALLER){const n=fmtNum(CALLER),mob=/^04/.test(n);Object.assign(D,{first:'',source:[],who:'',over18:''});
+ if(mob){D.mobile=n;D.fromPhone=true}
+ const b=document.getElementById('incoming');b.hidden=false;
+ b.innerHTML=mob?`Incoming call from <b>${esc(n)}</b>. It's already in the Mobile step, so just check it with them.`:`Incoming call from <b>${esc(n)}</b>. That's a landline, so ask for their mobile at the Mobile step.`}
+document.getElementById('f-staff').value=D.staff;
+render();
+</script>
+
+</body></html>
