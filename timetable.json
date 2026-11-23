@@ -1,18 +1,7 @@
 {
- "updated": "Mon 23 Nov, 6:44pm",
+ "updated": "Mon 23 Nov, 6:55pm",
  "timezone": "Australia/Melbourne",
  "classes": [
-  {
-   "date": "2026-11-23",
-   "start": "18:45",
-   "end": "19:30",
-   "class": "Strength",
-   "program": "Gym S&F Classes",
-   "coach": "Jack",
-   "booked": 1,
-   "capacity": 20,
-   "spots_left": 19
-  },
   {
    "date": "2026-11-23",
    "start": "19:00",
@@ -20,9 +9,9 @@
    "class": "Muay Thai Advanced",
    "program": "Adults MMA",
    "coach": "Kru",
-   "booked": 4,
+   "booked": 5,
    "capacity": 40,
-   "spots_left": 36
+   "spots_left": 35
   },
   {
    "date": "2026-11-23",
