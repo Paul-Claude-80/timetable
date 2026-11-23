@@ -1,5 +1,5 @@
 {
- "updated": "Mon 23 Nov, 6:34pm",
+ "updated": "Mon 23 Nov, 6:44pm",
  "timezone": "Australia/Melbourne",
  "classes": [
   {
@@ -9,9 +9,9 @@
    "class": "Strength",
    "program": "Gym S&F Classes",
    "coach": "Jack",
-   "booked": 0,
+   "booked": 1,
    "capacity": 20,
-   "spots_left": 20
+   "spots_left": 19
   },
   {
    "date": "2026-11-23",
