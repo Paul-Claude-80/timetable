@@ -1,5 +1,5 @@
 {
- "updated": "Mon 23 Nov, 8:15pm",
+ "updated": "Mon 23 Nov, 8:18pm",
  "timezone": "Australia/Melbourne",
  "classes": [
   {
@@ -196,9 +196,9 @@
    "class": "Muay Thai Beginner",
    "program": "Adults MMA",
    "coach": "Kru",
-   "booked": 4,
+   "booked": 3,
    "capacity": 50,
-   "spots_left": 46
+   "spots_left": 47
   },
   {
    "date": "2026-11-25",
