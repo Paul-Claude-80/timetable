@@ -1,5 +1,5 @@
 {
- "updated": "Tue 24 Nov, 7:47pm",
+ "updated": "Tue 24 Nov, 8:06pm",
  "timezone": "Australia/Melbourne",
  "classes": [
   {
@@ -251,9 +251,9 @@
    "class": "(3-6) Kids Muay Thai",
    "program": "Kids Muay Thai",
    "coach": "Andrei",
-   "booked": 0,
+   "booked": 2,
    "capacity": 20,
-   "spots_left": 20
+   "spots_left": 18
   },
   {
    "date": "2026-11-26",
