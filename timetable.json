@@ -1,5 +1,5 @@
 {
- "updated": "Wed 25 Nov, 3:36pm",
+ "updated": "Wed 25 Nov, 4:06pm",
  "timezone": "Australia/Melbourne",
  "classes": [
   {
@@ -20,9 +20,9 @@
    "class": "Strength",
    "program": "Gym S&F Classes",
    "coach": "Jack",
-   "booked": 0,
+   "booked": 1,
    "capacity": 30,
-   "spots_left": 30
+   "spots_left": 29
   },
   {
    "date": "2026-11-25",
@@ -64,9 +64,9 @@
    "class": "Strength",
    "program": "Gym S&F Classes",
    "coach": "Jack",
-   "booked": 0,
+   "booked": 1,
    "capacity": 30,
-   "spots_left": 30
+   "spots_left": 29
   },
   {
    "date": "2026-11-25",
@@ -75,9 +75,9 @@
    "class": "(7-12) Kids BJJ - BEGINNER",
    "program": "Kids BJJ",
    "coach": "Belal",
-   "booked": 0,
+   "booked": 2,
    "capacity": 50,
-   "spots_left": 50
+   "spots_left": 48
   },
   {
    "date": "2026-11-25",
