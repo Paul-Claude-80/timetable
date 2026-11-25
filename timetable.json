@@ -1,5 +1,5 @@
 {
- "updated": "Wed 25 Nov, 6:06pm",
+ "updated": "Wed 25 Nov, 6:36pm",
  "timezone": "Australia/Melbourne",
  "classes": [
   {
@@ -20,9 +20,9 @@
    "class": "Muay Thai Advanced",
    "program": "Adults MMA",
    "coach": "Kru",
-   "booked": 1,
+   "booked": 4,
    "capacity": 40,
-   "spots_left": 39
+   "spots_left": 36
   },
   {
    "date": "2026-11-25",
@@ -31,9 +31,9 @@
    "class": "BJJ No-Gi Beginner",
    "program": "Adults BJJ",
    "coach": "Belal",
-   "booked": 5,
+   "booked": 6,
    "capacity": 70,
-   "spots_left": 65
+   "spots_left": 64
   },
   {
    "date": "2026-11-26",
