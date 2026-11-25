@@ -1,51 +1,7 @@
 {
- "updated": "Wed 25 Nov, 5:05pm",
+ "updated": "Wed 25 Nov, 5:36pm",
  "timezone": "Australia/Melbourne",
  "classes": [
-  {
-   "date": "2026-11-25",
-   "start": "17:15",
-   "end": "18:00",
-   "class": "(7-12) Kids Muay Thai - ADVANCED",
-   "program": "Kids Muay Thai",
-   "coach": "Kru",
-   "booked": 1,
-   "capacity": 50,
-   "spots_left": 49
-  },
-  {
-   "date": "2026-11-25",
-   "start": "17:15",
-   "end": "18:00",
-   "class": "Strength",
-   "program": "Gym S&F Classes",
-   "coach": "Jack",
-   "booked": 2,
-   "capacity": 30,
-   "spots_left": 28
-  },
-  {
-   "date": "2026-11-25",
-   "start": "17:15",
-   "end": "18:00",
-   "class": "(7-12) Kids BJJ - BEGINNER",
-   "program": "Kids BJJ",
-   "coach": "Belal",
-   "booked": 4,
-   "capacity": 50,
-   "spots_left": 46
-  },
-  {
-   "date": "2026-11-25",
-   "start": "17:15",
-   "end": "18:00",
-   "class": "Kids Wrestling",
-   "program": "Kids Wrestling",
-   "coach": "Amir",
-   "booked": 8,
-   "capacity": 40,
-   "spots_left": 32
-  },
   {
    "date": "2026-11-25",
    "start": "18:00",
@@ -64,9 +20,9 @@
    "class": "Muay Thai Beginner",
    "program": "Adults MMA",
    "coach": "Kru",
-   "booked": 0,
+   "booked": 4,
    "capacity": 50,
-   "spots_left": 50
+   "spots_left": 46
   },
   {
    "date": "2026-11-25",
