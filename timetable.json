@@ -1,5 +1,5 @@
 {
- "updated": "Wed 25 Nov, 4:36pm",
+ "updated": "Wed 25 Nov, 5:05pm",
  "timezone": "Australia/Melbourne",
  "classes": [
   {
@@ -20,9 +20,9 @@
    "class": "Strength",
    "program": "Gym S&F Classes",
    "coach": "Jack",
-   "booked": 1,
+   "booked": 2,
    "capacity": 30,
-   "spots_left": 29
+   "spots_left": 28
   },
   {
    "date": "2026-11-25",
@@ -42,9 +42,9 @@
    "class": "Kids Wrestling",
    "program": "Kids Wrestling",
    "coach": "Amir",
-   "booked": 7,
+   "booked": 8,
    "capacity": 40,
-   "spots_left": 33
+   "spots_left": 32
   },
   {
    "date": "2026-11-25",
@@ -614,9 +614,9 @@
    "class": "Muay Thai Beginner",
    "program": "Adults MMA",
    "coach": "Kru",
-   "booked": 0,
+   "booked": 1,
    "capacity": 50,
-   "spots_left": 50
+   "spots_left": 49
   },
   {
    "date": "2026-11-30",
