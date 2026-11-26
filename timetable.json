@@ -1,29 +1,7 @@
 {
- "updated": "Thu 26 Nov, 11:36am",
+ "updated": "Thu 26 Nov, 12:06pm",
  "timezone": "Australia/Melbourne",
  "classes": [
-  {
-   "date": "2026-11-26",
-   "start": "12:00",
-   "end": "13:00",
-   "class": "Muay Thai All Levels",
-   "program": "Adults MMA",
-   "coach": "Kru",
-   "booked": 0,
-   "capacity": 50,
-   "spots_left": 50
-  },
-  {
-   "date": "2026-11-26",
-   "start": "12:00",
-   "end": "13:00",
-   "class": "BJJ No-Gi All Levels",
-   "program": "Adults BJJ",
-   "coach": "Jeshua",
-   "booked": 0,
-   "capacity": 50,
-   "spots_left": 50
-  },
   {
    "date": "2026-11-26",
    "start": "16:30",
