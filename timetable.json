@@ -1,5 +1,5 @@
 {
- "updated": "Thu 26 Nov, 12:06pm",
+ "updated": "Thu 26 Nov, 12:36pm",
  "timezone": "Australia/Melbourne",
  "classes": [
   {
@@ -108,9 +108,9 @@
    "class": "BJJ No-Gi All Levels",
    "program": "Adults BJJ",
    "coach": "Belal",
-   "booked": 1,
+   "booked": 0,
    "capacity": 70,
-   "spots_left": 69
+   "spots_left": 70
   },
   {
    "date": "2026-11-26",
