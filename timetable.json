@@ -1,5 +1,5 @@
 {
- "updated": "Thu 26 Nov, 3:36pm",
+ "updated": "Thu 26 Nov, 4:06pm",
  "timezone": "Australia/Melbourne",
  "classes": [
   {
@@ -31,9 +31,9 @@
    "class": "(7-12) Kids BJJ - ADVANCED",
    "program": "Kids BJJ",
    "coach": "Belal",
-   "booked": 0,
+   "booked": 1,
    "capacity": 40,
-   "spots_left": 40
+   "spots_left": 39
   },
   {
    "date": "2026-11-26",
@@ -53,9 +53,9 @@
    "class": "Kids BJJ - COMP (invite only)",
    "program": "Kids BJJ",
    "coach": "Belal",
-   "booked": 0,
+   "booked": 1,
    "capacity": 50,
-   "spots_left": 50
+   "spots_left": 49
   },
   {
    "date": "2026-11-26",
