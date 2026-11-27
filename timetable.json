@@ -1,5 +1,5 @@
 {
- "updated": "Fri 27 Nov, 12:36pm",
+ "updated": "Fri 27 Nov, 1:06pm",
  "timezone": "Australia/Melbourne",
  "classes": [
   {
@@ -64,9 +64,9 @@
    "class": "Kids Wrestling",
    "program": "Kids Wrestling",
    "coach": "Amir",
-   "booked": 0,
+   "booked": 1,
    "capacity": 40,
-   "spots_left": 40
+   "spots_left": 39
   },
   {
    "date": "2026-11-27",
