@@ -1,5 +1,5 @@
 {
- "updated": "Fri 27 Nov, 6:06pm",
+ "updated": "Fri 27 Nov, 6:36pm",
  "timezone": "Australia/Melbourne",
  "classes": [
   {
@@ -9,9 +9,9 @@
    "class": "Strength",
    "program": "Gym S&F Classes",
    "coach": "Jack",
-   "booked": 0,
+   "booked": 2,
    "capacity": 40,
-   "spots_left": 40
+   "spots_left": 38
   },
   {
    "date": "2026-11-28",
@@ -1263,9 +1263,9 @@
    "class": "(3-6) Kids Muay Thai",
    "program": "Kids Muay Thai",
    "coach": "Andrei",
-   "booked": 0,
+   "booked": 1,
    "capacity": 20,
-   "spots_left": 20
+   "spots_left": 19
   },
   {
    "date": "2026-12-08",
