@@ -1,5 +1,5 @@
 {
- "updated": "Fri 27 Nov, 2:36pm",
+ "updated": "Fri 27 Nov, 3:06pm",
  "timezone": "Australia/Melbourne",
  "classes": [
   {
@@ -262,9 +262,9 @@
    "class": "(3-6) Kids BJJ",
    "program": "Kids BJJ",
    "coach": "Julian",
-   "booked": 1,
+   "booked": 2,
    "capacity": 20,
-   "spots_left": 19
+   "spots_left": 18
   },
   {
    "date": "2026-11-30",
