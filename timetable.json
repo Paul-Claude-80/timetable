@@ -1,40 +1,7 @@
 {
- "updated": "Fri 27 Nov, 4:06pm",
+ "updated": "Fri 27 Nov, 4:36pm",
  "timezone": "Australia/Melbourne",
  "classes": [
-  {
-   "date": "2026-11-27",
-   "start": "16:30",
-   "end": "17:15",
-   "class": "Strength",
-   "program": "Gym S&F Classes",
-   "coach": "Jack",
-   "booked": 0,
-   "capacity": 20,
-   "spots_left": 20
-  },
-  {
-   "date": "2026-11-27",
-   "start": "16:30",
-   "end": "17:00",
-   "class": "(3-6) Kids BJJ No-Gi",
-   "program": "Kids BJJ",
-   "coach": "Julian",
-   "booked": 0,
-   "capacity": 20,
-   "spots_left": 20
-  },
-  {
-   "date": "2026-11-27",
-   "start": "16:30",
-   "end": "17:15",
-   "class": "Kids BJJ No-Gi - COMP (invite only)",
-   "program": "Kids BJJ",
-   "coach": "Belal",
-   "booked": 0,
-   "capacity": 50,
-   "spots_left": 50
-  },
   {
    "date": "2026-11-27",
    "start": "17:15",
@@ -42,9 +9,9 @@
    "class": "Strength",
    "program": "Gym S&F Classes",
    "coach": "Jack",
-   "booked": 0,
+   "booked": 1,
    "capacity": 20,
-   "spots_left": 20
+   "spots_left": 19
   },
   {
    "date": "2026-11-27",
@@ -53,9 +20,9 @@
    "class": "(7-12) Kids BJJ No-Gi",
    "program": "Kids BJJ",
    "coach": "Belal",
-   "booked": 0,
+   "booked": 7,
    "capacity": 50,
-   "spots_left": 50
+   "spots_left": 43
   },
   {
    "date": "2026-11-27",
@@ -64,9 +31,9 @@
    "class": "Kids Wrestling",
    "program": "Kids Wrestling",
    "coach": "Amir",
-   "booked": 1,
+   "booked": 10,
    "capacity": 40,
-   "spots_left": 39
+   "spots_left": 30
   },
   {
    "date": "2026-11-27",
@@ -1899,9 +1866,9 @@
    "start": "10:00",
    "end": "11:30",
    "name": "7-12yo Kids BJJ Grading",
-   "booked": 18,
+   "booked": 19,
    "capacity": 70,
-   "spots_left": 52
+   "spots_left": 51
   },
   {
    "date": "2026-12-05",
