@@ -1,18 +1,7 @@
 {
- "updated": "Fri 27 Nov, 11:45am",
+ "updated": "Fri 27 Nov, 12:06pm",
  "timezone": "Australia/Melbourne",
  "classes": [
-  {
-   "date": "2026-11-27",
-   "start": "12:00",
-   "end": "13:00",
-   "class": "BJJ No-Gi All Levels",
-   "program": "Adults BJJ",
-   "coach": "Julian",
-   "booked": 0,
-   "capacity": 50,
-   "spots_left": 50
-  },
   {
    "date": "2026-11-27",
    "start": "16:30",
