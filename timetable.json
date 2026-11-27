@@ -1,5 +1,5 @@
 {
- "updated": "Fri 27 Nov, 1:06pm",
+ "updated": "Fri 27 Nov, 1:36pm",
  "timezone": "Australia/Melbourne",
  "classes": [
   {
@@ -273,9 +273,9 @@
    "class": "(7-12) Kids BJJ - BEGINNER",
    "program": "Kids BJJ",
    "coach": "Jeshua",
-   "booked": 0,
+   "booked": 1,
    "capacity": 50,
-   "spots_left": 50
+   "spots_left": 49
   },
   {
    "date": "2026-11-30",
