@@ -1,5 +1,5 @@
 {
- "updated": "Fri 27 Nov, 4:36pm",
+ "updated": "Fri 27 Nov, 5:06pm",
  "timezone": "Australia/Melbourne",
  "classes": [
   {
@@ -31,9 +31,9 @@
    "class": "Kids Wrestling",
    "program": "Kids Wrestling",
    "coach": "Amir",
-   "booked": 10,
+   "booked": 11,
    "capacity": 40,
-   "spots_left": 30
+   "spots_left": 29
   },
   {
    "date": "2026-11-27",
@@ -614,9 +614,9 @@
    "class": "(3-6) Kids BJJ",
    "program": "Kids BJJ",
    "coach": "Julian",
-   "booked": 0,
+   "booked": 1,
    "capacity": 20,
-   "spots_left": 20
+   "spots_left": 19
   },
   {
    "date": "2026-12-02",
