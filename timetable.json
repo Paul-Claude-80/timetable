@@ -1,18 +1,7 @@
 {
- "updated": "Fri 27 Nov, 6:36pm",
+ "updated": "Fri 27 Nov, 7:06pm",
  "timezone": "Australia/Melbourne",
  "classes": [
-  {
-   "date": "2026-11-27",
-   "start": "18:45",
-   "end": "19:30",
-   "class": "Strength",
-   "program": "Gym S&F Classes",
-   "coach": "Jack",
-   "booked": 2,
-   "capacity": 40,
-   "spots_left": 38
-  },
   {
    "date": "2026-11-28",
    "start": "09:00",
