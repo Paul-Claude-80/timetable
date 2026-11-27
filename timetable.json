@@ -1,5 +1,5 @@
 {
- "updated": "Fri 27 Nov, 3:36pm",
+ "updated": "Fri 27 Nov, 4:06pm",
  "timezone": "Australia/Melbourne",
  "classes": [
   {
@@ -1890,27 +1890,27 @@
    "start": "09:00",
    "end": "09:45",
    "name": "3-6yo Kids BJJ Grading",
-   "booked": 7,
+   "booked": 8,
    "capacity": 50,
-   "spots_left": 43
+   "spots_left": 42
   },
   {
    "date": "2026-12-05",
    "start": "10:00",
    "end": "11:30",
    "name": "7-12yo Kids BJJ Grading",
-   "booked": 17,
+   "booked": 18,
    "capacity": 70,
-   "spots_left": 53
+   "spots_left": 52
   },
   {
    "date": "2026-12-05",
    "start": "12:00",
    "end": "14:00",
    "name": "Adults BJJ Grading",
-   "booked": 0,
+   "booked": 7,
    "capacity": 70,
-   "spots_left": 70
+   "spots_left": 63
   },
   {
    "date": "2026-12-11",
